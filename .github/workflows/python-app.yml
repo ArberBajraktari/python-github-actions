@@ -24,10 +24,10 @@ jobs:
       run: python ./main.py
       
     - name: Push to Docker
-      run: docker login -u ${{DOCKER_USERNAME}} -p ${{DOCKER_PASSWORD}}
+      run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
       
     - name: Build Docker image
-      run: docker build . --file Dockerfile --tag ${{DOCKER_USERNAME}}/test
+      run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USERNAME}}/test
       
     - name: Docker Push
       run: docker push ${{secrets.DOCKER_USERNAME}}/${{secrets.DOCKER_REPO}}
