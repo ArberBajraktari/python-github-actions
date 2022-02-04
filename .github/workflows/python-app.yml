@@ -30,4 +30,4 @@ jobs:
       run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USERNAME}}/${{secrets.DOCKER_REP}}
       
     - name: Docker Push
-      run: docker push ${{secrets.DOCKER_USERNAME}}/${{secrets.DOCKER_REP}}
+      run: docker push ${{secrets.DOCKER_USERNAME}}/${{secrets.DOCKER_REP}}:v1.0
